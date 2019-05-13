@@ -14,31 +14,26 @@
     color: $primary;
 }
 
-.topic-list td:last-of-type {
-    padding-right: 0;
-}
-
 .topic-list .activity {
-    min-width: 170px;
+    min-width: 180px;
     width: auto;
 }
 
 .topic-list .last-post {
-    padding: 5px 5px;
+    padding: 8px 5px;
     width: auto;
 }
 
 .topic-list .last-post .poster-avatar {
     float: left;
-    margin: 5px 5px 0 10px;
+    margin: 5px 7px 0 10px;
 }
 
 .topic-list .last-post .poster-info {
-    width: calc(100% - 48px);
+    width: calc(100% - 50px);
     float: right;
     overflow: hidden;
 }
-
 
 .topic-list .last-post .poster-info span.relative-date {
     color: $primary-high;
@@ -46,4 +41,10 @@
 
 .topic-list .last-post .poster-info .editor a {
     color: $primary;
+}
+
+@media (max-width: 870px) {
+    .topic-list .views {
+        display: none;
+    }
 }

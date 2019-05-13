@@ -1,6 +1,8 @@
 {
   "name": "MD Topic List",
-  "about_url": "https://meta.discourse.org/tags/theme-component",
+  "component": true,
   "license_url": "https://github.com/iunctis/md-topic-list/blob/master/LICENSE",
-  "component": true
+  "about_url": "https://www.mon-discourse.fr/category/themes/",
+  "authors": "Steven",
+  "theme_version": "1.0",
 }
