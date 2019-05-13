@@ -1,0 +1,91 @@
+<script type='text/x-handlebars' data-template-name='list/topic-list-item.raw'>
+
+{{#if bulkSelectEnabled}}
+  <td class="bulk-select">
+    <input type="checkbox" class="bulk-select">
+  </td>
+{{/if}}
+
+<td class='main-link clearfix' colspan="1">
+  <span class='link-top-line'>
+    {{~raw-plugin-outlet name="topic-list-before-status"}}
+    {{~raw "topic-status" topic=topic}}
+    {{~topic-link topic class="raw-link raw-topic-link"}}
+    {{~#if topic.featured_link}}
+    {{~topic-featured-link topic}}
+    {{~/if}}
+    {{~raw-plugin-outlet name="topic-list-after-title"}}
+    {{~#if showTopicPostBadges}}
+    {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
+    {{~/if}}
+  </span>
+  <div class="link-bottom-line">
+    {{#unless hideCategory}}
+      {{#unless topic.isPinnedUncategorized}}
+        {{category-link topic.category}}
+      {{/unless}}
+    {{/unless}}
+    <span class='topic-creator'>{{d-icon "user"}} <a href="/users/{{topic.creator.username}}" data-auto-route="true" data-user-card="{{topic.creator.username}}">{{topic.creator.username}}</a></span> &nbsp;
+    {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
+    {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
+  </div>
+  {{#if expandPinned}}
+    {{raw "list/topic-excerpt" topic=topic}}
+  {{/if}}
+</td>
+
+{{raw "list/posts-count-column" topic=topic}}
+
+{{#if showLikes}}
+  <td class="num likes">
+    {{#if hasLikes}}
+      <a href='{{topic.summaryUrl}}'>
+        {{number topic.like_count}} {{d-icon "heart"}}</td>
+  </a>
+{{/if}}
+{{/if}}
+
+{{#if showOpLikes}}
+  <td class="num likes">
+    {{#if hasOpLikes}}
+      <a href='{{topic.summaryUrl}}'>
+        {{number topic.op_like_count}} {{d-icon "heart"}}</td>
+  </a>
+{{/if}}
+{{/if}}
+
+<td class="num views {{topic.viewsHeat}}">{{number topic.views numberKey="views_long"}}</td>
+
+<td class="last-post">
+<div class='poster-avatar'>
+<a href="{{topic.lastPostUr}}" data-user-card="{{topic.last_poster_username}}">{{avatar topic.lastPoster usernamePath="username" imageSize="medium"}}</a>
+</div>
+<div class='poster-info'>
+<a href="{{topic.lastPostUrl}}">
+{{format-date topic.bumpedAt format="tiny"}}
+</a>
+<br />
+<span class='editor'><a href="/users/{{topic.last_poster_username}}" data-auto-route="true" data-user-card="{{topic.last_poster_username}}">{{topic.last_poster_username}}</a></span>
+</div>
+</td>
+</script>
+
+<script type='text/x-handlebars' data-template-name='topic-list-header.raw'>
+{{#if bulkSelectEnabled}}
+  <th class="bulk-select">
+    {{#if canBulkSelect}}
+      {{raw "flat-button" class="bulk-select" icon="list" title="topics.bulk.toggle"}}
+    {{/if}}
+  </th>
+{{/if}}
+{{raw "topic-list-header-column" order='default' name=listTitle bulkSelectEnabled=bulkSelectEnabled showBulkToggle=toggleInTitle canBulkSelect=canBulkSelect}}
+{{raw "topic-list-header-column" sortable=sortable number='true' order='posts' name='replies'}}
+{{#if showLikes}}
+  {{raw "topic-list-header-column" sortable=sortable number='true' order='likes' name='likes'}}
+{{/if}}
+{{#if showOpLikes}}
+  {{raw "topic-list-header-column" sortable=sortable number='true' order='op_likes' name='likes'}}
+{{/if}}
+{{raw "topic-list-header-column" sortable=sortable number='true' order='views' name='views'}}
+{{raw "topic-list-header-column" sortable=sortable number='true' order='activity' name='activity'}}
+</script>
