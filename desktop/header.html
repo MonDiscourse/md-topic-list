@@ -25,8 +25,8 @@
         {{category-link topic.category}}
       {{/unless}}
     {{/unless}}
-    <span class='topic-creator'>{{d-icon "user"}} <a href="/users/{{topic.creator.username}}" data-auto-route="true" data-user-card="{{topic.creator.username}}">{{topic.creator.username}}</a></span> &nbsp;
-    {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
+    <span class='topic-creator'>{{d-icon "user"}} <a href="/users/{{topic.creator.username}}" data-auto-route="true" data-user-card="{{topic.creator.username}}">{{topic.creator.username}}</a></span>
+	{{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
     {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
   </div>
   {{#if expandPinned}}

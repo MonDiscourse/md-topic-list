@@ -1,47 +1,45 @@
 /* MD Topic List */
 
-.topic-list .link-bottom-line .discourse-tags::before {
-    content: "🔖";
-    margin-left: 10px;
-    margin-right: 2px;
+.topic-list {
+	.link-bottom-line {
+		.discourse-tags::before {
+			content: "🔖";
+			margin-left: 12px;
+			margin-right: 2px;
+		}
+		.topic-creator {
+			font-size: 0.800em;
+			a {
+				color: $primary;
+			}
+		}
+	}
+	.activity {
+		min-width: 180px;
+		width: auto;
+	}
+	.last-post {
+		padding: 8px 5px;
+		width: auto;
+		.poster-avatar {
+			float: left;
+			margin: 5px 7px 0 10px;
+		}
+		.poster-info {
+			width: calc(100% - 50px);
+			float: right;
+			overflow: hidden;
+			span.relative-date {
+				color: $primary-high;
+			}
+			.editor a {
+				color: $primary;
+			}
+		}
+	}
 }
 
-.topic-list .link-bottom-line .topic-creator {
-    font-size: 0.800em;
-}
-
-.topic-list .link-bottom-line .topic-creator a {
-    color: $primary;
-}
-
-.topic-list .activity {
-    min-width: 180px;
-    width: auto;
-}
-
-.topic-list .last-post {
-    padding: 8px 5px;
-    width: auto;
-}
-
-.topic-list .last-post .poster-avatar {
-    float: left;
-    margin: 5px 7px 0 10px;
-}
-
-.topic-list .last-post .poster-info {
-    width: calc(100% - 50px);
-    float: right;
-    overflow: hidden;
-}
-
-.topic-list .last-post .poster-info span.relative-date {
-    color: $primary-high;
-}
-
-.topic-list .last-post .poster-info .editor a {
-    color: $primary;
-}
+/* RESPONSIVE */
 
 @media (max-width: 870px) {
     .topic-list .views {
