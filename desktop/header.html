@@ -77,6 +77,7 @@
 </script>
 
 <script type='text/x-handlebars' data-template-name='topic-list-header.raw'>
+{{~raw-plugin-outlet name="topic-list-header-before"~}}
 {{#if bulkSelectEnabled}}
   <th class="bulk-select">
     {{#if canBulkSelect}}
@@ -114,6 +115,7 @@
 {{/if}}
 {{raw "topic-list-header-column" sortable=sortable number='true' order='views' name='views'}}
 {{raw "topic-list-header-column" sortable=sortable number='true' order='activity' name='activity'}}
+{{~raw-plugin-outlet name="topic-list-header-after"~}}
 </script>
 
 <script>
