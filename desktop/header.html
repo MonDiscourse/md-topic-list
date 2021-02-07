@@ -1,4 +1,4 @@
-<script type='text/x-handlebars' data-template-name='list/topic-list-item.raw'>
+<script type='text/x-handlebars' data-template-name='categories-with-featured-topics.raw'>
 
 {{#if bulkSelectEnabled}}
   <td class="bulk-select">
@@ -70,7 +70,7 @@
 </td>
 </script>
 
-<script type='text/x-handlebars' data-template-name='topic-list-header.raw'>
+<script type='text/x-handlebars' data-template-name='categories-with-featured-topics.raw'>
 {{#if bulkSelectEnabled}}
   <th class="bulk-select">
     {{#if canBulkSelect}}
@@ -92,7 +92,7 @@
 
 <script>
 (function(){
-var TopicListItemView = require('discourse/components/topic-list-item').default;
+var TopicListItemView = require('discourse/components/categories-with-featured-topics').default;
 TopicListItemView.reopen({
     showCategory: function(){
         return !this.get('controller.hideCategory') &&
