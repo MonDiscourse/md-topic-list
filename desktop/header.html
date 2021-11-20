@@ -8,21 +8,21 @@
   </td>
 {{/if}}
 
-<td class='main-link clearfix' colspan="1" role="rowheader">
+<td class='main-link clearfix topic-list-data' colspan="1" role="rowheader">
   {{~raw-plugin-outlet name="topic-list-before-link"}}
   <span class='link-top-line'>
     {{~raw-plugin-outlet name="topic-list-before-status"}}
     {{~raw "topic-status" topic=topic}}
     {{~topic-link topic class="raw-link raw-topic-link"}}
     {{~#if topic.featured_link}}
-    {{~topic-featured-link topic}}
+	  {{~topic-featured-link topic}}
     {{~/if}}
     {{~raw-plugin-outlet name="topic-list-after-title"}}
     {{~raw "list/unread-indicator" includeUnreadIndicator=includeUnreadIndicator 
                                    topicId=topic.id 
                                    unreadClass=unreadClass~}}
     {{~#if showTopicPostBadges}}
-    {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
+      {{~raw "topic-post-badges" unread=topic.unread newPosts=topic.displayNewPosts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
     {{~/if}}
   </span>
   <div class="link-bottom-line">
@@ -43,7 +43,7 @@
 {{raw "list/posts-count-column" topic=topic}}
 
 {{#if showLikes}}
-  <td class="num likes">
+  <td class="num likes topic-list-data">
     {{#if hasLikes}}
       <a href='{{topic.summaryUrl}}'>
         {{number topic.like_count}} {{d-icon "heart"}}</td>
@@ -51,16 +51,7 @@
 {{/if}}
 {{/if}}
 
-{{#if showOpLikes}}
-  <td class="num likes">
-    {{#if hasOpLikes}}
-      <a href='{{topic.summaryUrl}}'>
-        {{number topic.op_like_count}} {{d-icon "heart"}}</td>
-  </a>
-{{/if}}
-{{/if}}
-
-<td class="num views {{topic.viewsHeat}}">{{number topic.views numberKey="views_long"}}</td>
+<td class="num views {{topic.viewsHeat}} topic-list-data">{{number topic.views numberKey="views_long"}}</td>
 
 <td class="last-post">
 <div class='poster-avatar'>
@@ -79,7 +70,7 @@
 <script type='text/x-handlebars' data-template-name='topic-list-header.raw'>
 {{~raw-plugin-outlet name="topic-list-header-before"~}}
 {{#if bulkSelectEnabled}}
-  <th class="bulk-select">
+  <th class="bulk-select topic-list-data">
     {{#if canBulkSelect}}
       {{raw "flat-button" class="bulk-select" icon="list" title="topics.bulk.toggle"}}
     {{/if}}
@@ -99,7 +90,7 @@
 
 <script type='text/x-handlebars' data-template-name='topic-list-header.raw'>
 {{#if bulkSelectEnabled}}
-  <th class="bulk-select">
+  <th class="bulk-select topic-list-data">
     {{#if canBulkSelect}}
       {{raw "flat-button" class="bulk-select" icon="list" title="topics.bulk.toggle"}}
     {{/if}}
