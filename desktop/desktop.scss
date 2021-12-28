@@ -10,7 +10,7 @@
 		.topic-creator {
 			font-size: 0.800em;
 			a {
-				color: $primary;
+				color: var(--primary);
 			}
 		}
 	}
@@ -30,10 +30,10 @@
 			float: right;
 			overflow: hidden;
 			span.relative-date {
-				color: $primary-high;
+				color: var(--primary-high);
 			}
 			.editor a {
-				color: $primary;
+				color: var(--primary);
 			}
 		}
 	}
