@@ -3,9 +3,9 @@
 .topic-list {
 	.link-bottom-line {
 		.discourse-tags::before {
-			content: "🔖";
+			font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f02b";
 			margin-left: 12px;
-			margin-right: 2px;
+			margin-right: 4px;
 		}
 		.topic-creator {
 			font-size: 0.800em;
