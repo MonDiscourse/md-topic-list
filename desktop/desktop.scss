@@ -1,7 +1,12 @@
 // MD Topic List
 
+.navigation-topics {
+    .topic-list .topic-list-header th:nth-child(2) {
+        display: none;
+    }
+}
+
 .topic-list {
-    .topic-list-header th:nth-child(2),
     .topic-list-body .posters {
         display: none;
     }
