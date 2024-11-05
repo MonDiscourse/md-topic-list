@@ -1,14 +1,23 @@
-/* MD Topic List */
+// MD Topic List
 
 .topic-list {
+    .topic-list-header th:nth-child(2),
+    .topic-list-body .posters {
+        display: none;
+    }
 	.link-bottom-line {
-		.discourse-tags::before {
-			font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f02b";
-			margin-left: 12px;
-			margin-right: 4px;
-		}
+	    .discourse-tags {
+	        order:3;
+	        margin-left: 2px;
+	        &::before {
+			    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f02b";
+			    margin-right: 4px;
+		    }
+	    }
 		.topic-creator {
-			font-size: 0.800em;
+		    order: 2;
+		    margin-left: 2px;
+			font-size: var(--font-down-1);
 			a {
 				color: var(--primary);
 			}
