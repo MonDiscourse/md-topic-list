@@ -1,5 +1,13 @@
 // MD Topic List
 
+.navigation-topics,
+.navigation-category,
+.tags-page {
+    .topic-list .topic-list-header th:nth-child(2) {
+        display: none;
+    }
+}
+
 .topic-list {
 	.link-bottom-line {
 	    .discourse-tags {
