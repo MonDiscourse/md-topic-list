@@ -1,6 +1,8 @@
 // MD Topic List
 
-.navigation-topics {
+.navigation-topics,
+.navigation-category,
+.tags-page {
     .topic-list .topic-list-header th:nth-child(2) {
         display: none;
     }
