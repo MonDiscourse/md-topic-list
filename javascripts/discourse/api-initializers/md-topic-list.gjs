@@ -1,9 +1,9 @@
 import { apiInitializer } from "discourse/lib/api";
 
-const LastPostCell = <template>
+const lastpostHeaderCell = <template>
   <th>Activity</th>
 </template>;
-const LastPostCell = <template>
+const lastpostItemCell = <template>
   <td>Test</td>
 </template>;
 
@@ -16,8 +16,8 @@ export default apiInitializer("1.34", (api) => {
 	columns.delete("activity");
 
     columns.add("lastpost", {
-        header: LastPostCell,
-        item: LastPostCell,
+        header: lastpostHeaderCell,
+        item: lastpostHeaderCell,
     });
 
     return columns;
