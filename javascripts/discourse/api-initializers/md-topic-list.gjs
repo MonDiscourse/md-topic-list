@@ -23,6 +23,8 @@ export default apiInitializer("1.34", (api) => {
   api.registerValueTransformer("topic-list-columns", ({ value: columns }) => {
     // Remove the core column which shows poster avatars:
     columns.delete("posters");
+	columns.delete("activity");
+
     columns.add("last-post", {
         header: LastPostCell,
         item: LastPostCell,
