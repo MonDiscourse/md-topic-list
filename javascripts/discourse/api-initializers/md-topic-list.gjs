@@ -1,35 +1,31 @@
 import { apiInitializer } from "discourse/lib/api";
 
-const LastPostCol = <template>
-  <th>Last Post</th>
+const StaffHeaderCell = <template>
+  <th>Staff?</th>
 </template>;
-const LastPostCell = <template>
-  <td class="last-post">
-    <div class='poster-avatar'>
-      <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}">{{avatar topic.lastPosterUser imageSize="medium"}}</a>
-    </div>
-    <div class='poster-info'>
-      <span class='editor'><a href="/users/{{topic.last_poster_username}}" data-auto-route="true" data-user-card="{{topic.last_poster_username}}">{{topic.last_poster_username}}</a></span>
-      <br />
-      <a href="{{topic.lastPostUrl}}">{{format-date topic.bumpedAt format="tiny"}}</a>
-    </div>
-  </td>
+const StaffItemCell = <template>
+  <td>{{if @topic.creator.staff "?"}}</td>
 </template>;
 
-export default apiInitializer("1.8.0", (api) => {
+export default apiInitializer("1.34", (api) => {
   const discoveryService = api.container.lookup("service:discovery");
 
   api.registerValueTransformer("topic-list-columns", ({ value: columns }) => {
+    // Remove the core column which shows poster avatars:
     columns.delete("posters");
-    columns.delete("activity");
-    return columns;
-  });
 
-  api.registerValueTransformer("topic-list-columns", ({ value: columns }) => {
-    columns.add("last-post", {
-        header: LastPostCell,
-        item: LastPostCell,
-    });
+    // Swap the "replies" and "views" columns:
+    columns.reposition("views", { before: "replies" });
+
+    // Lean on external autotracked state to make decisions:
+    if (discoveryService.category?.slug === "announcements") {
+      // Add a custom column:
+      columns.add("created-by-staff", {
+        header: StaffHeaderCell,
+        item: StaffItemCell,
+      });
+    }
+
     return columns;
   });
 });
