@@ -1,17 +1,6 @@
 // MD Topic List
 
-.navigation-topics,
-.navigation-category,
-.tags-page {
-    .topic-list .topic-list-header th:nth-child(2) {
-        display: none;
-    }
-}
-
 .topic-list {
-    .topic-list-body .posters {
-        display: none;
-    }
 	.link-bottom-line {
 	    .discourse-tags {
 	        order:3;
@@ -30,10 +19,8 @@
 			}
 		}
 	}
-	.activity {
-		min-width: 250px;
-	}
 	.last-post {
+		min-width: 250px;
 		padding: 8px 5px;
 		.poster-avatar {
 			float: left;
