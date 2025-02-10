@@ -4,9 +4,9 @@ const lastpostHeaderCell = <template>
   <th>Activity</th>
 </template>;
 const lastpostItemCell = <template>
-  <td class="last-post">
-    <div class="poster-avatar">
-      <a href="{{this.topic.lastPostUrl}}" data-user-card="{{this.topic.last_poster_username}}">{{avatar this.topic.lastPosterUser imageSize="medium"}}</a>
+  <td class='last-post'>
+    <div class='poster-avatar'>
+      <a href='{{this.topic.lastPostUrl}}' data-user-card='{{this.topic.last_poster_username}}'>{{avatar this.topic.lastPosterUser imageSize='medium'}}</a>
     </div>
   </td>
 </template>;
