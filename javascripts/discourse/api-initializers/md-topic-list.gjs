@@ -5,14 +5,7 @@ const lastpostHeaderCell = <template>
 </template>;
 const lastpostItemCell = <template>
   <td class="last-post">
-    <div class="poster-avatar">
-      <a href={{@topic.lastPostUrl}} aria-label={{i18n "latest_poster_link" username=@topic.lastPosterUser.username}} data-user-card={{@topic.lastPosterUser.username}}>{{avatar @topic.lastPosterUser imageSize="large"}}</a>
-    </div>
-    <div class="poster-info">
-      <span class="editor"><a href={{@topic.lastPostUrl}} data-user-card="{{@topic.lastPosterUser.username}}">{{@topic.last_poster_username}}</a></span>
-      <br />
-      <a href={{@topic.lastPostUrl}}>{{formatDate @topic.bumpedAt format="tiny" noTitle="true"}}</a>
-    </div>
+    test
   </td>
 </template>;
 
