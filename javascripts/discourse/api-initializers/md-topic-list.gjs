@@ -26,8 +26,7 @@ export default apiInitializer("1.8.0", (api) => {
     columns.add("last-post", {
         header: LastPostCell,
         item: LastPostCell,
-      });
-    }
+    });
 
     return columns;
   });
