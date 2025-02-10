@@ -14,17 +14,10 @@ export default apiInitializer("1.34", (api) => {
     // Remove the core column which shows poster avatars:
     columns.delete("posters");
 
-    // Swap the "replies" and "views" columns:
-    columns.reposition("views", { before: "replies" });
-
-    // Lean on external autotracked state to make decisions:
-    if (discoveryService.category?.slug === "announcements") {
-      // Add a custom column:
-      columns.add("created-by-staff", {
+    columns.add("test", {
         header: StaffHeaderCell,
         item: StaffItemCell,
-      });
-    }
+    });
 
     return columns;
   });
