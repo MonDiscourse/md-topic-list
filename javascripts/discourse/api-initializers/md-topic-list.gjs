@@ -1,7 +1,7 @@
 import { apiInitializer } from "discourse/lib/api";
 
 const LastPostCol = <template>
-  <th>Staff?</th>
+  <th>Last Post</th>
 </template>;
 const LastPostCell = <template>
   <td class="last-post">
@@ -21,13 +21,15 @@ export default apiInitializer("1.8.0", (api) => {
 
   api.registerValueTransformer("topic-list-columns", ({ value: columns }) => {
     columns.delete("posters");
-	columns.delete("activity");
+    columns.delete("activity");
+    return columns;
+  });
 
+  api.registerValueTransformer("topic-list-columns", ({ value: columns }) => {
     columns.add("last-post", {
         header: LastPostCell,
         item: LastPostCell,
     });
-
     return columns;
   });
 });
