@@ -9,7 +9,7 @@ const lastpostItemCell = <template>
       <a href={{@topic.lastPostUrl}} data-user-card={{@topic.lastPosterUser.username}}>{{avatar topic.lastPosterUser imageSize="medium"}}</a>
     </div>
     <div class="poster-info">
-      <span class="editor"><a href={{@topic.lastPostUrl}} data-user-card="{{@topic.lastPosterUser.username}}">{{topic.last_poster_username}}</a></span>
+      <span class="editor"><a href={{@topic.lastPostUrl}} data-user-card="{{@topic.lastPosterUser.username}}">{{@topic.last_poster_username}}</a></span>
       <br />
       <a href={{@topic.lastPostUrl}}>{{formatDate @topic.bumpedAt format="tiny" noTitle="true"}}</a>
     </div>
