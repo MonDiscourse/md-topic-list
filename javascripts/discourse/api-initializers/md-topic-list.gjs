@@ -1,7 +1,5 @@
 import { apiInitializer } from "discourse/lib/api";
 
-export default apiInitializer("1.39.0", (api) => {
-
 const LastPostCol = <template>
   <th>Staff?</th>
 </template>;
@@ -18,10 +16,10 @@ const LastPostCell = <template>
   </td>
 </template>;
 
+export default apiInitializer("1.8.0", (api) => {
   const discoveryService = api.container.lookup("service:discovery");
 
   api.registerValueTransformer("topic-list-columns", ({ value: columns }) => {
-    // Remove the core column which shows poster avatars:
     columns.delete("posters");
 	columns.delete("activity");
 
