@@ -6,12 +6,10 @@ const lastpostHeaderCell = <template>
 const lastpostItemCell = <template>
   <td class="last-post">
     <div class="poster-avatar">
-test
+      test
     </div>
     <div class="poster-info">
-      <span class="editor"><a href={{@topic.lastPostUrl}} data-user-card="{{@topic.lastPosterUser.username}}">{{@topic.last_poster_username}}</a></span>
-      <br />
-      <a href={{@topic.lastPostUrl}}>{{formatDate @topic.bumpedAt format="tiny" noTitle="true"}}</a>
+      test
     </div>
   </td>
 </template>;
