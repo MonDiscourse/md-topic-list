@@ -1,5 +1,6 @@
 import { apiInitializer } from "discourse/lib/api";
-import { i18n } from "discourse-i18n";
+
+export default apiInitializer("1.39.0", (api) => {
 
 const LastPostCol = <template>
   <th>Staff?</th>
@@ -17,7 +18,6 @@ const LastPostCell = <template>
   </td>
 </template>;
 
-export default apiInitializer("1.34", (api) => {
   const discoveryService = api.container.lookup("service:discovery");
 
   api.registerValueTransformer("topic-list-columns", ({ value: columns }) => {
