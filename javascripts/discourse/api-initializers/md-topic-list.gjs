@@ -1,4 +1,22 @@
 import { apiInitializer } from "discourse/lib/api";
+import Component from "@glimmer/component";
+import { hash } from "@ember/helper";
+import { on } from "@ember/modifier";
+import { action } from "@ember/object";
+import { service } from "@ember/service";
+import PluginOutlet from "discourse/components/plugin-outlet";
+import ActionList from "discourse/components/topic-list/action-list";
+import ParticipantGroups from "discourse/components/topic-list/participant-groups";
+import TopicExcerpt from "discourse/components/topic-list/topic-excerpt";
+import TopicLink from "discourse/components/topic-list/topic-link";
+import UnreadIndicator from "discourse/components/topic-list/unread-indicator";
+import TopicPostBadges from "discourse/components/topic-post-badges";
+import TopicStatus from "discourse/components/topic-status";
+import categoryLink from "discourse/helpers/category-link";
+import discourseTags from "discourse/helpers/discourse-tags";
+import topicFeaturedLink from "discourse/helpers/topic-featured-link";
+import { groupPath } from "discourse/lib/url";
+import { i18n } from "discourse-i18n";
 
 const lastpostHeaderCell = <template>
   <th>Activity</th>
