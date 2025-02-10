@@ -5,7 +5,9 @@ const lastpostHeaderCell = <template>
 </template>;
 const lastpostItemCell = <template>
   <td class="last-post">
-    test
+    <div class="poster-avatar">
+      <a href={{@topic.lastPostUrl}} aria-label={{i18n "latest_poster_link" username=@topic.lastPosterUser.username}} data-user-card={{@topic.lastPosterUser.username}}>{{avatar @topic.lastPosterUser imageSize="large"}}</a>
+    </div>
   </td>
 </template>;
 
