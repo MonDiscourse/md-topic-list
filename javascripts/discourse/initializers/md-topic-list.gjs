@@ -10,7 +10,7 @@ const HeaderLatestPosterCell = <template>
     @activeOrder={{@order}}
     @changeSort={{@changeSort}}
     @ascending={{@ascending}}
-    @name="user.last_posted"
+    @name="activity"
   />
 </template>;
 
