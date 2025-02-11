@@ -1,18 +1,3 @@
 <script type='text/x-handlebars' data-template-name='/connectors/topic-list-before-category/creator'>
-  <span class='topic-creator'>{{d-icon "user"}} <a href="/users/{{topic.creator.username}}" data-auto-route="true" data-user-card="{{topic.creator.username}}">{{topic.creator.username}}</a></span>
-</script>
-
-<script type='text/x-handlebars' data-template-name='list/activity-column.raw'>
-<td class="last-post">
-<div class='poster-avatar'>
-<a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}">{{avatar topic.lastPosterUser imageSize="medium"}}</a>
-</div>
-<div class='poster-info'>
-<span class='editor'><a href="/users/{{topic.last_poster_username}}" data-auto-route="true" data-user-card="{{topic.last_poster_username}}">{{topic.last_poster_username}}</a></span>
-<br />
-<a href="{{topic.lastPostUrl}}">
-{{format-date topic.bumpedAt format="tiny"}}
-</a>
-</div>
-</td>
+  <span class='topic-creator'>{{d-icon "user"}} <a href="/users/{{this.topic.creator.username}}" data-auto-route="true" data-user-card="{{this.topic.creator.username}}">{{this.topic.creator.username}}</a></span>
 </script>
