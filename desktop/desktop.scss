@@ -9,10 +9,6 @@ th.topic-list-data.last-post {
 	    .discourse-tags {
 	        order:3;
 	        margin-left: 2px;
-	        &::before {
-			    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f02b";
-			    margin-right: 4px;
-		    }
 	    }
 		.topic-creator {
 		    order: 2;
